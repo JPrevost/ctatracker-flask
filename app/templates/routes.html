@@ -1,0 +1,28 @@
+{% include '_header.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="page-header">
+            <h1>CTA Bus Tracker <small>by Jeremy Prevost</small></h1>
+        </div>
+
+        <ol class="breadcrumb">
+          <li class="active">Choose a Route</li>
+        </ol>
+
+        <ul class="list-group">
+        {% for route in routes.find_all("route"): %}
+            <li class="list-group-item">
+                <a href="{{ url_for('directions', rt=route.rt.text,
+                                     rtnm=route.rtnm.text) }}">
+                    {{ route.rt.text }} {{ route.rtnm.text }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+
+        {% include '_footer.html' %}
+
+    </div>
+{% endblock %}

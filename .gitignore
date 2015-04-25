@@ -1,0 +1,14 @@
+# Virtualenv
+.Python
+bin
+lib
+include
+
+# Mac OS X custom attribute files
+.DS_Store
+
+# Secrets file
+config.cfg
+
+.coverage
+__pycache__/

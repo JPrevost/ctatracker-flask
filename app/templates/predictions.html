@@ -1,0 +1,30 @@
+{% include '_header.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="page-header">
+            <h1>CTA Bus Tracker <small>by Jeremy Prevost</small></h1>
+        </div>
+
+        <ol class="breadcrumb">
+          <li class="active">Predictions</li>
+        </ol>
+
+        <ul class="list-group">
+        {% for prediction in predictions: %}
+            <li class="list-group-item">
+                {{ prediction['stpnm'] }}
+                {{ prediction['vid'] }}
+                {{ prediction['rt'] }}
+                {{ prediction['rtdir'] }}
+                {{ prediction['des'] }}
+                {{ prediction['prdtm'] }}
+                {{ prediction['dt'] }}
+            </li>
+        {% endfor %}
+        </ul>
+
+        {% include '_footer.html' %}
+
+    </div>
+{% endblock %}

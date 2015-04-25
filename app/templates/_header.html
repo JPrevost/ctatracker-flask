@@ -1,0 +1,13 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block styles %}
+	{{super()}}
+	<link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% block scripts %}
+	{{super()}}
+	<script src="//use.edgefonts.net/pt-sans-narrow:n4,n7:all.js"></script>
+{% endblock %}
